@@ -61,14 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
         
     })
 
-    const submitButton = document.querySelector("button#submit")
+    const commentForm = document.querySelector("form")
     const commentList = document.querySelector("div#list")
 
-    submitButton.addEventListener("click", function(e) {
-            const p = document.createElement("p")
-            // commentLi.textContent = `${document.querySelector("input#comment-input").value}`
-            p.textContent = "hi"
-            commentList.append(p)
+    commentForm.addEventListener("submit", function(e) {
+        e.preventDefault()
+        const comment = document.querySelector('input')
+        const p = document.createElement("p")
+        p.textContent = comment.value
+        commentList.append(p)
     })
     
 
